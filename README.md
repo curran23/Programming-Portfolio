@@ -1,4 +1,1 @@
-sample
-======
-
-This is a test repo
+This is my programming portfolio. Many of the projects are written in Java because of my Intermediate Computing class. Some of them are my own projects however, such as the Texas Hold Em game which can be seen in more detail in another repository.
