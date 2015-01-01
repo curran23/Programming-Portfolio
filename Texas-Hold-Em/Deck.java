@@ -128,5 +128,19 @@ public class Deck {
 		return deckSize;
 	}
 	
+//	public String showTheTable() {
+//		Deck theTable = new Deck();
+//		ArrayList<Card> useableTable = new ArrayList<Card>();
+//		for (int i = 0; i < 3; i++) {
+//			useableTable.add(theTable.get(i));
+//		}
+//		
+//		String returnString = "";
+//		for (int i = 0; i < 3; i++) {
+//			returnString += useableTable.get(i) + " ";
+//		}
+//		return returnString;
+//	}
+	
 	
 }

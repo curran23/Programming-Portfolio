@@ -21,7 +21,7 @@ public class HandEvaluator {
 		
 		// If you have a pocket pair
 		if (aHand.get(0).rank == aHand.get(1).rank) {
-			returnString = "Pair";
+			returnString = "Pocket Pair";
 		}
 		
 		
@@ -98,19 +98,26 @@ public class HandEvaluator {
 			}
 		}
 		
-		// If not a pocket pair, 3 of a kind is still possible
+		// If not a pocket pair, check for three of a kind
 		else {	
-			// Check for a pair on the board
+			// Check for a pair on the board starting at the first card
 			for (int j = 0; j < aTable.size() - 1; j++) {
+<<<<<<< HEAD
 				// Loop again right away to compare the first card with all the cards on the table
 				// This will find all pairs, regardless of the cards' location on the table
+=======
+				// Compare the first card with the cards following it, do not compare to itself
+>>>>>>> 09c6c20429c5d84354476518a1b90263f26815f7
 				for (int k = j+1; k < aTable.size(); k++) {
 					if (aTable.get(j).rank == aTable.get(k).rank) {
 						// If a pair exists, check to see if either player cards
 						// create three of a kind
+						
+						// If the first card in the players hand makes a 3 of a kind
 						if (cardRanks[0] == aTable.get(j).rank) {
 							returnString = "Three of a Kind, table pair";
 						}
+						// If the second card in the players hand makes a 3 of a kind
 						else if (cardRanks[1] == aTable.get(j).rank) {
 							returnString = "Three of a Kind, table pair";
 						}
@@ -121,6 +128,17 @@ public class HandEvaluator {
 							for (int l = k + 1; l < aTable.size(); l ++) {
 								if (aTable.get(j).rank == aTable.get(l).rank) {
 									returnString = "Three of a Kind, all on the table";
+								}
+							}
+						}
+						
+						// The final possibility is that there is a three of a kind on the table by itself
+						else {
+							// Start at the 3rd card because we will know the first two match at this point
+							for (int l = k+1; l < aTable.size(); l++) {
+								// We can use j to compare because we know it matches i
+								if (aTable.get(l).rank == aTable.get(j).rank) {
+									returnString = "Three of a kind, on the table";
 								}
 							}
 						}
